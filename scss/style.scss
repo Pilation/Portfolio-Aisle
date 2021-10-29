@@ -1,0 +1,42 @@
+@import "_null.scss";
+@import "_fonts.scss";
+
+@keyframes shake {
+    from {
+        transform: rotate(10deg);
+    }
+    to {
+        transform-origin: center center;
+        transform: rotate(-10deg);
+    }
+}
+
+body {
+    position: relative;
+}
+p,
+h1,
+h2,
+h3,
+span,
+a,
+picture,
+li {
+    display: block;
+}
+
+//todo media
+@media screen and (min-device-width: 1440px) {
+}
+@media screen and (min-device-width: 320px) and (max-width: 1024px) {
+}
+@media screen and (min-device-width: 481px) and (max-width: 768px) {
+}
+@media screen and (min-device-width: 320px) and (max-width: 768px) {
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+}
+
+//hover
+@media screen and (min-device-width: 768px) {
+}
