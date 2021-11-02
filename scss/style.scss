@@ -1,5 +1,8 @@
 @import "_null.scss";
 @import "_fonts.scss";
+@import "_slick-theme.scss";
+@import "_slick.scss";
+@import "_sliders.scss";
 
 @keyframes shake {
     from {
@@ -18,11 +21,262 @@ p,
 h1,
 h2,
 h3,
-span,
 a,
 picture,
 li {
     display: block;
+    width: fit-content;
+}
+
+$font: "Roboto", sans-serif;
+$green: #0b4d3c;
+
+//todo Header-above
+.header-above {
+    & a {
+        display: block;
+    }
+    background-color: $green;
+    &__box {
+        margin: 0 auto;
+        width: 1380px;
+    }
+
+    &__menu {
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: 10% 20% 5%;
+        column-gap: auto;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__item {
+        font-family: $font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 36px;
+        & span {
+            display: block;
+        }
+        &:nth-child(2),
+        &:nth-child(3) {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+        }
+        &:nth-child(2) {
+            justify-content: space-between;
+        }
+        &:nth-child(3) {
+            justify-content: center;
+        }
+    }
+    &__link {
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
+    }
+}
+
+//todo Header
+.header {
+    &__box {
+        margin: 0 auto;
+        width: 1380px;
+        height: 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__logo {
+        width: 6%;
+        & img {
+            width: 100%;
+        }
+    }
+    &__burger {
+        display: none;
+    }
+}
+
+.header-menu {
+    width: 33%;
+    &__list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__item {
+    }
+    &__link {
+        font-family: $font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 26px;
+        color: #303030;
+        & span {
+            display: inline-block;
+        }
+    }
+}
+
+//todo Period-products
+.period-products {
+    &__box {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__green {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: $green;
+
+        & img {
+            width: 60%;
+        }
+    }
+
+    &__yellow {
+        position: relative;
+        img {
+            width: 100%;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 303px;
+            height: 268px;
+            background-image: url(../img/green-pad.svg);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+    }
+
+    &__title {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        font-family: $font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 96px;
+        line-height: 110px;
+        letter-spacing: 2px;
+        color: #fff;
+        & span {
+            position: absolute;
+            &:first-child {
+                top: 23px;
+                left: 33px;
+            }
+            &:nth-child(2) {
+                top: 25%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            &:nth-child(3) {
+                top: 50%;
+                right: 27px;
+            }
+            &:nth-child(4) {
+                left: 18%;
+                bottom: 25px;
+            }
+        }
+    }
+
+    &__link {
+        position: absolute;
+        width: 90px;
+        bottom: 30px;
+        right: 30px;
+        z-index: 10;
+        font-family: $font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 32px;
+        line-height: 32px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #fff;
+    }
+}
+
+//todo Best sellers
+.best-sellers {
+    &__box {
+        padding-top: 125px;
+        font-family: $font;
+        font-style: normal;
+        font-weight: normal;
+        margin: 0 auto;
+        width: 1200px;
+    }
+    &__title {
+        padding-left: 12px;
+        font-size: 95px;
+        line-height: 96px;
+        display: block;
+    }
+
+    &__list {
+        min-width: 0;
+        margin: 35px auto 0 auto;
+    }
+
+    &__item {
+        font-size: 16px;
+        line-height: 22px;
+        min-width: 0;
+        margin: 0 12px;
+        border: 1px solid red;
+        display: grid !important;
+        align-items: center;
+        width: 370px;
+        justify-content: space-between;
+        grid-template-columns: 30% 1fr 1fr 20%;
+        grid-template-areas:
+            "a a a a"
+            "b c c d";
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    &__illustration {
+        grid-area: a;
+    }
+
+    &__description {
+        grid-area: b;
+    }
+
+    &__line {
+        width: 100%;
+        border-bottom: 1px solid #000;
+        grid-area: c;
+    }
+
+    &__price {
+        grid-area: d;
+        margin-left: 10px;
+        justify-self: flex-start;
+    }
+}
+.best-sellers-title {
 }
 
 //todo media
