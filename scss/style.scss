@@ -23,7 +23,8 @@ h2,
 h3,
 a,
 picture,
-li {
+li,
+span {
     display: block;
     width: fit-content;
 }
@@ -31,15 +32,27 @@ li {
 $font: "Roboto", sans-serif;
 $green: #0b4d3c;
 
+%rbr {
+    border: 1px solid red;
+}
+
+// @extend %rbr;
+
+.go-top-button {
+    display: none;
+}
+
+.wrapper {
+    background: #e5e5e5;
+}
+
 //todo Header-above
 .header-above {
-    & a {
-        display: block;
-    }
     background-color: $green;
     &__box {
+        @extend %rbr;
         margin: 0 auto;
-        width: 1380px;
+        padding: 0 30px;
     }
 
     &__menu {
@@ -47,9 +60,8 @@ $green: #0b4d3c;
 
     &__list {
         display: grid;
-        grid-template-columns: 10% 20% 5%;
+        grid-template-columns: 10% 1fr 10%;
         column-gap: auto;
-        justify-content: space-between;
         align-items: center;
     }
 
@@ -59,20 +71,22 @@ $green: #0b4d3c;
         font-weight: normal;
         font-size: 12px;
         line-height: 36px;
-        & span {
-            display: block;
-        }
-        &:nth-child(2),
-        &:nth-child(3) {
-            width: 100%;
+        &:nth-child(2) {
             display: flex;
             flex-direction: row;
-        }
-        &:nth-child(2) {
-            justify-content: space-between;
+            justify-self: center;
+            & a {
+                padding: 0 15px;
+            }
         }
         &:nth-child(3) {
-            justify-content: center;
+            display: flex;
+            flex-direction: row;
+            justify-self: flex-end;
+            & span {
+                color: #fff;
+                margin: 0 10px;
+            }
         }
     }
     &__link {
@@ -85,8 +99,9 @@ $green: #0b4d3c;
 //todo Header
 .header {
     &__box {
+        @extend %rbr;
         margin: 0 auto;
-        width: 1380px;
+        padding: 0 30px;
         height: 100px;
         display: flex;
         justify-content: space-between;
@@ -103,6 +118,7 @@ $green: #0b4d3c;
     }
 }
 
+//todo Header menu
 .header-menu {
     width: 33%;
     &__list {
@@ -129,6 +145,7 @@ $green: #0b4d3c;
 //todo Period-products
 .period-products {
     &__box {
+        @extend %rbr;
         position: relative;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -218,13 +235,37 @@ $green: #0b4d3c;
 
 //todo Best sellers
 .best-sellers {
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 170px;
+        width: 428px;
+        height: 614px;
+        background-image: url(../img/yellow-pad.svg);
+        background-repeat: no-repeat;
+        // background-size: 428px 614px;
+        background-size: 100% 100%;
+        background-position: top 0 right -70px;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 90px;
+        width: 155px;
+        height: 155px;
+        background-image: url(../img/blue-dots.svg);
+        background-size: 100% 100%;
+    }
     &__box {
-        padding-top: 125px;
+        width: 100%;
+        padding: 125px 8% 0 8%;
         font-family: $font;
         font-style: normal;
         font-weight: normal;
         margin: 0 auto;
-        width: 1200px;
     }
     &__title {
         padding-left: 12px;
@@ -234,6 +275,7 @@ $green: #0b4d3c;
     }
 
     &__list {
+        max-width: 1205px;
         min-width: 0;
         margin: 35px auto 0 auto;
     }
@@ -243,7 +285,6 @@ $green: #0b4d3c;
         line-height: 22px;
         min-width: 0;
         margin: 0 12px;
-        border: 1px solid red;
         display: grid !important;
         align-items: center;
         width: 370px;
@@ -257,6 +298,7 @@ $green: #0b4d3c;
     }
 
     &__illustration {
+        background-color: #f5f3eb;
         grid-area: a;
     }
 
@@ -276,7 +318,737 @@ $green: #0b4d3c;
         justify-self: flex-start;
     }
 }
-.best-sellers-title {
+
+//todo For planet
+.for-planet {
+    &__box {
+        margin: 80px auto 0 auto;
+        padding: 0 5%;
+    }
+
+    &__title {
+        width: 100%;
+        font-family: $font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 35px;
+        line-height: 56px;
+        text-align: center;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+    }
+
+    &__list {
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__item {
+        width: 22%;
+        display: grid;
+        column-gap: 20px;
+        grid-template-columns: 50px 1fr;
+        align-items: center;
+        grid-template-areas:
+            "a b"
+            "a c";
+        &:nth-child(1) {
+            .for-planet__icon {
+                background-image: url(../img/truck.png);
+            }
+        }
+        &:nth-child(2) {
+            .for-planet__icon {
+                background-image: url(../img/factory.png);
+            }
+        }
+        &:nth-child(3) {
+            .for-planet__icon {
+                background-image: url(../img/plug.png);
+            }
+        }
+    }
+
+    &__icon {
+        height: 50px;
+        grid-area: a;
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    &__kilo {
+        font-family: $font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 20px;
+        grid-area: b;
+    }
+
+    &__description {
+        font-family: $font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 26px;
+        grid-area: c;
+    }
+}
+
+//todo Green story
+.green-story {
+    margin-top: 30px;
+    position: relative;
+    &__logo {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 80px;
+        height: 15px;
+        background-image: url(../img/GreenStory.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+    &__description {
+        margin: 0 auto;
+        font-family: $font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 19px;
+    }
+}
+
+//todo Fresh blood
+.fresh-blood {
+    margin-top: 40px;
+    background-color: #b14629;
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        right: 25px;
+        top: 50px;
+        width: 176px;
+        height: 159px;
+        background-image: url(../img/yellow-dots.svg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+    &__box {
+        padding: 70px 10% 175px 10%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas:
+            ". . b b"
+            "a a b b"
+            "a a b b"
+            "a a . .";
+    }
+
+    &__picture {
+        height: auto;
+        display: block;
+        grid-area: a;
+        align-self: flex-end;
+        width: 100%;
+    }
+
+    &__card {
+        position: relative;
+        font-family: $font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 26px;
+        color: #fff;
+        justify-self: flex-end;
+        grid-area: b;
+        display: grid;
+        grid-template-areas:
+            "a a a"
+            "b . c";
+        & img {
+            grid-area: a;
+        }
+        & span:nth-child(1) {
+            grid-area: b;
+        }
+        & span:nth-child(3) {
+            grid-area: c;
+        }
+    }
+
+    &__discount {
+        position: absolute;
+        top: 55px;
+        left: -38px;
+        width: 72px;
+        height: 73px;
+        background-image: url(../img/new-spot.svg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        color: #162a91;
+        line-height: 73px;
+        text-align: center;
+        position: absolute;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    &__shop {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 436px;
+        height: 207px;
+        background-image: url(../img/shop-spot.svg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        font-family: $font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 32px;
+        line-height: 280px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #a03315;
+    }
+
+    &__title {
+        // position: absolute;
+        font-family: $font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 193px;
+        line-height: 200px;
+        letter-spacing: 8px;
+        color: #ffffff;
+        &::before {
+            position: absolute;
+            content: "";
+            width: 7px;
+            height: 363px;
+            background-color: #fff;
+            left: 35px;
+            top: 235px;
+        }
+        &::after {
+            position: absolute;
+            content: "";
+            width: 270px;
+            height: 55px;
+            bottom: 117px;
+            right: 47px;
+            background-image: url(../img/arrow.svg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        & span {
+            &:nth-child(1) {
+                position: absolute;
+                top: 0;
+                left: 20px;
+            }
+            &:nth-child(2) {
+                position: absolute;
+                bottom: 70px;
+                right: 330px;
+            }
+        }
+    }
+}
+
+//todo New period
+.new-period {
+    background-color: #f5f3eb;
+    &__box {
+        width: 77%;
+        margin: 0 auto;
+        padding: 170px 0;
+        display: grid;
+        grid-template-columns: 46% 44%;
+        grid-template-rows: 1fr;
+        column-gap: 9%;
+        align-items: center;
+        grid-template-areas: "a b";
+    }
+
+    &__text {
+        grid-area: a;
+    }
+
+    &__title {
+        font-family: $font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 88px;
+        line-height: 88px;
+        letter-spacing: 2px;
+    }
+
+    &__description {
+        margin-top: 32px;
+        font-family: $font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 32px;
+    }
+
+    &__list {
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 70px;
+        row-gap: 40px;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+            "a b"
+            "c d";
+    }
+    &__icon {
+        width: 50px;
+        height: 50px;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        margin-right: 20px;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        &:nth-child(1) {
+            grid-area: a;
+            & .new-period__icon {
+                background-image: url(../img/earth.png);
+            }
+        }
+        &:nth-child(2) {
+            grid-area: b;
+            & .new-period__icon {
+                background-image: url(../img/palms.png);
+            }
+        }
+        &:nth-child(3) {
+            grid-area: c;
+            & .new-period__icon {
+                background-image: url(../img/smile.png);
+            }
+        }
+        &:nth-child(4) {
+            grid-area: d;
+            & .new-period__icon {
+                background-image: url(../img/pad.png);
+            }
+        }
+    }
+
+    &__small-description {
+        width: 56%;
+        font-family: $font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 22px;
+    }
+}
+
+//todo Quiz
+.quiz {
+    position: relative;
+    width: fit-content;
+    z-index: 0;
+    &::before {
+        top: -23px;
+        left: -65px;
+        position: absolute;
+        content: "";
+        width: 142px;
+        height: 122px;
+        background-image: url(../img/blue-dots-period.svg);
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+    &::after {
+        z-index: -1;
+        top: -70px;
+        left: -68px;
+        position: absolute;
+        content: "";
+        width: 144%;
+        height: 547px;
+        background-image: url(../img/period-spot.svg);
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+    &__illustration {
+        width: 100%;
+        grid-area: b;
+    }
+
+    &__blue-spot {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32%;
+        position: absolute;
+        bottom: 67px;
+        right: -125px;
+        right: -30%;
+        width: 206px;
+        height: 130px;
+        color: #fff;
+        background-image: url(../img/blue-spot.svg);
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    &__description {
+        font-family: $font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 32px;
+        line-height: 32px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+}
+
+//todo Featured pages
+.featured-pages {
+    background-color: #f5f3eb;
+    position: relative;
+    &::before {
+        position: absolute;
+        content: "";
+        width: 1089px;
+        height: 665px;
+        background-image: url(../img/featured-spot.svg);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        top: 170px;
+        right: 0;
+    }
+    &__box {
+        margin: 0 auto;
+        padding: 0 10%;
+    }
+
+    &__title {
+        width: 100%;
+        padding-top: 70px;
+        font-family: $font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 96px;
+        line-height: 96px;
+        letter-spacing: 2px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        & span {
+            &:nth-child(2) {
+                margin-left: 15px;
+                width: 32%;
+                height: 7px;
+                background-color: #000;
+            }
+        }
+    }
+    &__list {
+        max-width: 1050px;
+        min-width: 0;
+        margin: 80px auto 0 auto;
+    }
+
+    &__item {
+        border: 1px solid red;
+        width: 332px;
+        margin: 0 8px;
+    }
+
+    &__illustration {
+        width: 100%;
+    }
+
+    &__text {
+        padding: 30px 24px 17px 24px;
+        min-height: 240px;
+        background-color: #fff;
+        font-family: $font;
+        font-style: normal;
+        font-weight: normal;
+        display: grid;
+        grid-template-columns: 30% 1fr 15%;
+        column-gap: 10px;
+        row-gap: 10px;
+        align-items: center;
+        grid-template-areas:
+            "a a a"
+            "b b b"
+            "c d e";
+    }
+
+    &__card-title {
+        grid-area: a;
+        font-size: 24px;
+        line-height: 34px;
+    }
+
+    &__description {
+        grid-area: b;
+        font-size: 16px;
+        line-height: 24px;
+        padding-bottom: 40px;
+    }
+
+    &__small-title {
+        grid-area: c;
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    &__line {
+        grid-area: d;
+        width: 100%;
+        height: 1px;
+        background-color: #000;
+    }
+
+    &__quiz {
+        grid-area: e;
+        font-size: 16px;
+        line-height: 26px;
+    }
+}
+
+//todo Quotes
+.quotes {
+    background-color: #f5f3eb;
+    &__box {
+        position: relative;
+        padding-top: 110px;
+        height: 691px;
+        &::before {
+            content: "";
+            width: 154px;
+            height: 101px;
+            background-image: url(../img/quote-lines.svg);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            position: absolute;
+            top: 160px;
+            left: 27%;
+        }
+    }
+    &__blue,
+    &__yellow,
+    &__orange,
+    &__green {
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__blue {
+        top: 170px;
+        left: 0;
+        background-image: url(../img/quote-blue.svg);
+        width: 289px;
+        height: 311px;
+        .quotes__description {
+            max-width: 168px;
+        }
+    }
+    &__yellow {
+        top: 303px;
+        left: 22%;
+        background-image: url(../img/quote-yellow.svg);
+        width: 388px;
+        height: 302px;
+        .quotes__description {
+            max-width: 252px;
+        }
+    }
+    &__orange {
+        top: 234px;
+        right: 22%;
+        background-image: url(../img/quote-orange.svg);
+        width: 414px;
+        height: 278px;
+        .quotes__description {
+            max-width: 232px;
+        }
+    }
+    &__green {
+        padding-left: 40px;
+        bottom: 60px;
+        right: 0;
+        background-image: url(../img/quote-green.svg);
+        background-position: center;
+        width: 303px;
+        height: 289px;
+        .quotes__description {
+            max-width: 200px;
+        }
+        &::before {
+            content: "";
+            width: 130px;
+            height: 145px;
+            background-image: url(../img/quote-dots.svg);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            position: absolute;
+            top: -70px;
+            right: 70px;
+        }
+    }
+
+    &__description {
+        font-family: $font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 28px;
+        text-align: center;
+        color: #fff;
+    }
+
+    &__name {
+        font-family: $font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        color: #fff;
+    }
+}
+
+//todo Brands
+.brands {
+    background-color: #f5f3eb;
+
+    &__box {
+        padding-top: 60px;
+        width: 70%;
+        margin: 0 auto;
+        padding-bottom: 270px;
+    }
+
+    &__quote {
+        margin: 0 auto;
+        width: 75%;
+        font-family: $font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 28px;
+        line-height: 39px;
+        text-align: center;
+    }
+
+    &__list {
+        margin-top: 55px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        margin-top: 20px;
+        width: fit-content;
+        justify-self: center;
+        &:first-child {
+            justify-self: flex-start;
+        }
+        &:last-child {
+            justify-self: flex-end;
+        }
+    }
+
+    &__logo {
+        width: 100%;
+    }
+}
+
+//todo Footer
+.footer {
+    background-color: #943434;
+    &__box {
+        position: relative;
+        width: 96%;
+        margin: 0 auto;
+        height: 600px;
+    }
+
+    &__title {
+    }
+
+    &__logo {
+    }
+
+    &__menu {
+    }
+
+    &__list {
+    }
+
+    &__item {
+    }
+
+    &__link {
+    }
+
+    &__form {
+    }
+}
+
+.footer-slides {
+    &__list {
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        top: -80px;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        margin-top: 50px;
+        width: 15%;
+        width: 216px;
+        border: 1px solid white;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 37%;
+            bottom: 0;
+            left: 0;
+            background-color: #943434;
+        }
+    }
+    &__image {
+    }
+}
+
+.copyright {
 }
 
 //todo media
