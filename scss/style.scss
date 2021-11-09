@@ -41,7 +41,8 @@
 }
 
 $f190: calc(100px + 90 * ((100vw - 420px) / (1440 - 420)));
-$f100: calc(50px + 50 * ((100vw - 420px) / (1440 - 420)));
+$f190: calc(80px + 110 * ((100vw - 420px) / (1440 - 420)));
+$f100: calc(60px + 40 * ((100vw - 420px) / (1440 - 420)));
 // $fh2: calc(22px + 28 * ((100vw - 420px) / (1440 - 420)));
 // $fh3: calc(25px + 5 * ((100vw - 420px) / (1440 - 420)));
 // $fp25: calc(20px + 5 * ((100vw - 420px) / (1440 - 420)));
@@ -314,13 +315,11 @@ $green: #0b4d3c;
         font-family: $font;
         font-style: normal;
         font-weight: normal;
-        margin: 0 auto;
     }
     &__title {
         padding-left: 12px;
-        font-size: 95px;
-        line-height: 96px;
-        display: block;
+        font-size: $f100;
+        line-height: $f100;
     }
 
     &__list {
@@ -392,12 +391,16 @@ $green: #0b4d3c;
     &__list {
         margin-top: 30px;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
     }
 
     &__item {
+        margin: 0 auto;
         width: 22%;
+        min-width: 200px;
         display: grid;
         column-gap: 20px;
         grid-template-columns: 50px 1fr;
@@ -656,8 +659,8 @@ $green: #0b4d3c;
         font-family: $font;
         font-style: normal;
         font-weight: normal;
-        font-size: 88px;
-        line-height: 88px;
+        font-size: $f100;
+        line-height: $f100;
         letter-spacing: 2px;
     }
 
@@ -676,10 +679,7 @@ $green: #0b4d3c;
         grid-template-columns: repeat(2, 1fr);
         column-gap: 70px;
         row-gap: 40px;
-        grid-template-rows: 1fr;
-        grid-template-areas:
-            "a b"
-            "c d";
+        grid-template-rows: 1fr 1fr;
     }
     &__icon {
         width: 50px;
@@ -694,25 +694,21 @@ $green: #0b4d3c;
         flex-direction: row;
         justify-content: flex-start;
         &:nth-child(1) {
-            grid-area: a;
             & .new-period__icon {
                 background-image: url(../img/earth.png);
             }
         }
         &:nth-child(2) {
-            grid-area: b;
             & .new-period__icon {
                 background-image: url(../img/palms.png);
             }
         }
         &:nth-child(3) {
-            grid-area: c;
             & .new-period__icon {
                 background-image: url(../img/smile.png);
             }
         }
         &:nth-child(4) {
-            grid-area: d;
             & .new-period__icon {
                 background-image: url(../img/pad.png);
             }
@@ -778,16 +774,13 @@ $green: #0b4d3c;
         width: 32%;
         position: absolute;
         bottom: 67px;
-        right: -125px;
-        right: -30%;
+        right: -22%;
         width: 206px;
         height: 130px;
         color: #fff;
         background-image: url(../img/blue-spot.svg);
         background-size: 100%;
         background-repeat: no-repeat;
-
-        display: none;
     }
 
     &__description {
@@ -809,6 +802,7 @@ $green: #0b4d3c;
     &::before {
         position: absolute;
         content: "";
+        max-width: 100%;
         width: 812px;
         height: 665px;
         background-image: url(../img/featured-spot.svg);
@@ -831,8 +825,8 @@ $green: #0b4d3c;
         font-family: $font;
         font-style: normal;
         font-weight: normal;
-        font-size: 96px;
-        line-height: 96px;
+        font-size: $f100;
+        line-height: $f100;
         letter-spacing: 2px;
         display: flex;
         flex-direction: row;
@@ -1263,18 +1257,9 @@ $green: #0b4d3c;
     color: #ffffff;
 }
 
-//todo media
+//! media
 
-// @media screen and (min-device-width: 320px) and (max-width: 1024px) {
-// }
-// @media screen and (min-device-width: 481px) and (max-width: 768px) {
-// }
-// @media screen and (min-device-width: 320px) and (max-width: 768px) {
-// }
-// @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-// }
 @media only screen and (min-device-width: 320px) and (max-device-width: 1200px) {
-    //todo остались слайдеры,fresh blood (850px)
     //todo Header
     .header {
         padding-bottom: 90px;
@@ -1421,46 +1406,13 @@ $green: #0b4d3c;
         }
     }
 
-    //! Best sellers
-
-    //todo For planet
+    // //todo For planet
     .for-planet {
+        position: relative;
+        z-index: 1;
         &__box {
             margin: 80px auto 0 auto;
-            padding: 0 5%;
-        }
-
-        &__title {
-            width: 100%;
-            font-family: $font;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 35px;
-            line-height: 56px;
-            text-align: center;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-        }
-
-        &__list {
-            margin-top: 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            gap: 20px;
-        }
-
-        &__item {
-            margin: 0 auto;
-            width: 50%;
-            // display: grid;
-            // column-gap: 20px;
-            // grid-template-columns: 50px 1fr;
-            // align-items: center;
-            // grid-template-areas:
-            //     "a b"
-            //     "a c";
+            padding: 0 0;
         }
     }
 
@@ -1557,8 +1509,7 @@ $green: #0b4d3c;
             display: grid;
             grid-template-columns: 1fr;
             grid-template-rows: repeat(2, 1fr);
-            column-gap: 0;
-            // row-gap: 5%;
+            row-gap: 5%;
             align-items: center;
             grid-template-areas:
                 "b b"
@@ -1569,7 +1520,7 @@ $green: #0b4d3c;
             margin: 0 auto;
             align-self: flex-start;
             grid-area: a;
-            width: 85%;
+            width: 80%;
             text-align: center;
         }
 
@@ -1617,37 +1568,24 @@ $green: #0b4d3c;
             // grid-area: b;
         }
 
-        // &__blue-spot {
-        //     display: flex;
-        //     align-items: center;
-        //     justify-content: center;
-        //     width: 32%;
-        //     position: absolute;
-        //     bottom: 67px;
-        //     right: -125px;
-        //     right: -30%;
-        //     width: 206px;
-        //     height: 130px;
-        //     color: #fff;
-        //     background-image: url(../img/blue-spot.svg);
-        //     background-size: 100%;
-        //     background-repeat: no-repeat;
-        // }
-
-        // &__description {
-        //     padding-top: 30px;
-        //     font-family: $font;
-        //     font-style: normal;
-        //     font-weight: normal;
-        //     font-size: 32px;
-        //     line-height: 32px;
-        //     text-align: center;
-        //     text-transform: uppercase;
-        // }
+        &__blue-spot {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32%;
+            position: absolute;
+            bottom: 30px;
+            right: -5%;
+            width: 206px;
+            height: 130px;
+            color: #fff;
+            background-image: url(../img/blue-spot.svg);
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
     }
 
-    //! Featured pages
-
+    //todo Quotes
     .brands {
         &__quote {
             width: 100%;
@@ -1656,84 +1594,82 @@ $green: #0b4d3c;
 
     //todo Footer
     .footer {
-        .footer {
-            background-color: #943434;
-            position: relative;
-            &__box {
-                max-width: 1380px;
-                width: 96%;
-                margin: 0 auto;
-            }
+        background-color: #943434;
+        position: relative;
+        &__box {
+            max-width: 1380px;
+            width: 96%;
+            margin: 0 auto;
+        }
 
-            &__title {
-                & span {
-                    &:last-child {
-                        position: absolute;
-                        bottom: 500px;
-                        right: 5px;
-                    }
+        &__title {
+            & span {
+                &:last-child {
+                    position: absolute;
+                    bottom: 500px;
+                    right: 5px;
                 }
             }
+        }
 
-            &__logo {
-                margin-left: auto;
-                display: flex;
-                align-items: center;
+        &__logo {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+        }
+
+        &__menu {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            width: 75%;
+            margin: 20px auto 0 auto;
+            gap: 60px;
+        }
+
+        &__list {
+            margin: 0 auto;
+            width: 130px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        &__lower-box {
+            padding-top: 200px;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 3fr;
+            grid-template-areas:
+                "b"
+                "a";
+            align-items: flex-end;
+        }
+
+        &__form {
+            grid-area: a;
+            width: 100%;
+
+            & label {
             }
 
-            &__menu {
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: flex-start;
-                flex-wrap: wrap;
-                width: 75%;
-                margin: 20px auto 0 auto;
-                gap: 60px;
+            & span {
+                margin-bottom: 55px;
             }
-
-            &__list {
-                margin: 0 auto;
-                width: 130px;
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
-                align-items: flex-start;
+        }
+        &__form-box {
+            width: 54%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            & button {
             }
-
-            &__lower-box {
-                padding-top: 200px;
-                display: grid;
-                grid-template-columns: 1fr;
-                grid-template-rows: 1fr 3fr;
-                grid-template-areas:
-                    "b"
-                    "a";
-                align-items: flex-end;
-            }
-
-            &__form {
-                grid-area: a;
+            & input {
+                height: 55px;
                 width: 100%;
-
-                & label {
-                }
-
-                & span {
-                    margin-bottom: 55px;
-                }
-            }
-            &__form-box {
-                width: 54%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                & button {
-                }
-                & input {
-                    height: 55px;
-                    width: 100%;
-                }
             }
         }
     }
@@ -1795,16 +1731,13 @@ $green: #0b4d3c;
             padding: 0 0;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: 1fr 0.5fr 0.5fr 0.5fr;
+            grid-template-rows: 2fr 1fr 2fr 0.5fr;
             grid-template-areas:
-                // "a a a a"
-
                 "a a a a"
                 ". . . ."
                 "b b b b"
                 "c c c c";
             &::after {
-                z-index: 1;
             }
         }
 
@@ -1814,54 +1747,40 @@ $green: #0b4d3c;
         }
 
         &__card {
+            position: relative;
+            align-self: center;
             padding-right: 30px;
             font-size: 20px;
-            grid-area: b;
         }
 
         &__discount {
         }
 
         &__shop {
-            max-width: 100%;
-            // justify-self: flex-start;
-            // width: 100%;
-            // height: 100%;
         }
         &__title {
-            z-index: 1;
-            display: grid;
             grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(3, 1fr);
+            grid-template-rows: 2fr 1fr 2fr 0.5fr;
             grid-template-areas:
                 "a a . ."
                 "b b c c"
+                ". . . ."
                 ". . . .";
+            // ;
             &::before {
-                height: 20%;
-                left: 2%;
-                top: 15%;
+                top: 10%;
             }
 
             & span {
-                &:nth-child(1) {
-                    grid-area: a;
-                    align-self: flex-start;
-                }
-                &:nth-child(2) {
-                    grid-area: b;
-                    align-self: center;
-                }
+                position: relative;
+                z-index: 2;
                 &:nth-child(3) {
-                    grid-area: c;
-                    align-self: center;
-                    width: 100%;
-                    margin-bottom: 0;
+                    justify-self: flex-end;
                 }
             }
         }
     }
-    //! Quotes
+    //todo Quotes
     .quotes {
         background-color: #f5f3eb;
         &__box {
@@ -1906,6 +1825,7 @@ $green: #0b4d3c;
             line-height: 20px;
         }
     }
+    //todo Footer
     .footer {
         &__title {
             justify-content: center;
@@ -1917,6 +1837,230 @@ $green: #0b4d3c;
         }
         &__logo {
             margin: 0 auto;
+        }
+    }
+    //todo Quiz
+    .quiz {
+        &__blue-spot {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32%;
+            position: absolute;
+            bottom: 0;
+            right: -0;
+            width: 206px;
+            height: 130px;
+            color: #fff;
+            background-image: url(../img/blue-spot.svg);
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+    }
+    //todo For planet
+    .for-planet {
+        &__title {
+            &__item {
+                width: 33%;
+            }
+        }
+    }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 550px) {
+    //todo Best sellers
+    .best-sellers {
+        &::before {
+            position: absolute;
+            z-index: 0;
+        }
+        &::after {
+            top: 7%;
+            width: 100px;
+            height: 100px;
+        }
+        &__box {
+            width: 100%;
+            padding-top: 25px;
+            font-family: $font;
+        }
+        &__title {
+            position: relative;
+            z-index: 2;
+        }
+
+        &__list {
+            margin-top: 20px;
+        }
+    }
+    //todo For planet
+    .for-planet {
+        position: relative;
+        z-index: 1;
+        &__box {
+            margin-top: 20px;
+        }
+        &__item {
+            width: 70%;
+        }
+        &__list {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+    }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 450px) {
+    //todo Period-products
+    .period-products {
+        &__title {
+            grid-template-areas:
+                "a a a a"
+                "b b b b"
+                "c c c c"
+                "d d d d"
+                ". . . .";
+            & span {
+                &:nth-child(3) {
+                    align-self: flex-start;
+                }
+            }
+        }
+    }
+    //todo For planet
+    .for-planet {
+        &__item {
+            width: 100%;
+        }
+    }
+    //todo Fresh blood
+    .fresh-blood {
+        &__box {
+            padding: 0 0;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 0.5fr 1fr 0.5fr 2fr 1fr;
+            grid-template-areas:
+                ". . . ."
+                "a a a a"
+                ". . . ."
+                "b b b b"
+                "c c c c";
+            &::after {
+                width: 88px;
+                height: 80px;
+                right: 0;
+                top: 0;
+            }
+        }
+
+        &__picture {
+            padding: 0 10px;
+        }
+
+        &__card {
+            justify-self: center;
+            padding: 0 10px;
+            & img {
+                max-width: 100%;
+            }
+        }
+
+        &__discount {
+            left: 20px;
+            top: 10px;
+        }
+
+        &__shop {
+            width: 100%;
+            max-height: 70%;
+            padding: 50px 20px 0 0;
+            align-self: flex-end;
+            line-height: normal;
+            text-align: center;
+        }
+        &__title {
+            padding: 0 10px;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 0.5fr 1fr 0.5fr 2fr 1fr;
+            grid-template-areas:
+                "a a . ."
+                ". . . ."
+                "b b c c"
+                ". . . ."
+                ". . . .";
+            &::before {
+                top: 10%;
+            }
+
+            & span {
+                &:nth-child(3) {
+                    justify-self: flex-end;
+                    width: 60%;
+                }
+            }
+        }
+    }
+    //todo New period
+    .new-period {
+        &__box {
+            padding: 0 0;
+            grid-template-rows: 1fr 1fr;
+            row-gap: 0;
+        }
+
+        &__text {
+            width: 85%;
+            text-align: center;
+        }
+
+        &__list {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(4, 1fr);
+        }
+
+        &__item {
+            width: 80%;
+            justify-self: center;
+        }
+    }
+    //todo Featured pages
+    .featured-pages {
+        &::before {
+            max-width: 100%;
+            max-height: 60%;
+        }
+    }
+    //todo Quotes
+    .quotes {
+        &__blue,
+        &__yellow,
+        &__orange,
+        &__green {
+            width: 100%;
+        }
+
+        &__description {
+            font-size: 20px;
+            line-height: 22px;
+        }
+    }
+    .footer {
+        &__box {
+        }
+        &__menu {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            width: 90%;
+        }
+        &__list {
+            margin: 0 0;
+            width: 45%;
         }
     }
 }
