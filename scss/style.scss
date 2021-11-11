@@ -40,13 +40,8 @@
     }
 }
 
-$f190: calc(100px + 90 * ((100vw - 420px) / (1440 - 420)));
 $f190: calc(80px + 110 * ((100vw - 420px) / (1440 - 420)));
 $f100: calc(60px + 40 * ((100vw - 420px) / (1440 - 420)));
-// $fh2: calc(22px + 28 * ((100vw - 420px) / (1440 - 420)));
-// $fh3: calc(25px + 5 * ((100vw - 420px) / (1440 - 420)));
-// $fp25: calc(20px + 5 * ((100vw - 420px) / (1440 - 420)));
-// $fp20: calc(15px + 5 * ((100vw - 420px) / (1440 - 420)));
 
 body {
     position: relative;
@@ -66,11 +61,6 @@ span {
 $font: "Roboto", sans-serif;
 $green: #0b4d3c;
 
-%rbr {
-    border: 1px solid red;
-}
-
-// @extend %rbr;
 //todo Go-top-button
 .go-top-button {
     position: fixed;
@@ -164,6 +154,7 @@ $green: #0b4d3c;
         align-items: center;
     }
     &__logo {
+        min-width: 50px;
         width: 6%;
         & img {
             width: 100%;
@@ -1260,19 +1251,25 @@ $green: #0b4d3c;
 }
 
 //! media
-
 @media only screen and (min-device-width: 320px) and (max-device-width: 1200px) {
+    //todo Main
+    .main {
+        padding-top: 96px;
+        transition: all 1s;
+        &.active {
+            padding-top: 191px;
+        }
+    }
     //todo Header
     .header {
-        padding-bottom: 90px;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
         &__box {
-            // max-width: 1440px;
-            // margin: 0 auto;
-            // padding: 0 30px;
-            // height: 100px;
-            // display: flex;
-            // justify-content: space-between;
-            // align-items: center;
+            background: #e5e5e5;
+            height: 60px;
         }
         &__burger {
             display: block;
@@ -1326,37 +1323,38 @@ $green: #0b4d3c;
     .header-menu {
         &.active {
             transition: all 1s;
-            display: block;
+            z-index: 50;
+            top: 60px;
         }
         position: absolute;
         left: auto;
-        top: 100px;
-        height: 90px;
+        height: 95px;
         width: 50%;
-        background-color: $green;
+        background-color: #fcb538;
         right: 0;
-        display: none;
+        top: -150px;
+        border-bottom: 5px solid #fff;
         &:first-child {
             left: 0;
         }
         &__list {
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
         }
 
         &__item {
             height: 30px;
             width: 100%;
-            border: 1px solid #fff;
         }
         &__link {
-            width: 100%;
+            margin: 0 auto;
+            width: 80%;
+            border-bottom: 1px solid #fff;
             text-align: center;
             font-family: $font;
             font-style: normal;
             font-weight: normal;
-            font-size: 25px;
+            font-size: 20px;
             line-height: 30px;
             color: #fff;
             & span {
@@ -1751,6 +1749,10 @@ $green: #0b4d3c;
     }
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 850px) {
+    //todo Go-top-button
+    .go-top-button {
+        opacity: 1;
+    }
     //todo Best Sellers
     .best-sellers {
         &__list {
@@ -1802,7 +1804,6 @@ $green: #0b4d3c;
                 "b b c c"
                 ". . . ."
                 ". . . .";
-            // ;
             &::before {
                 top: 10%;
             }
@@ -1916,6 +1917,76 @@ $green: #0b4d3c;
     }
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 550px) {
+    //todo Main
+    .main {
+        padding-top: 96px;
+        transition: all 1s;
+        &.active {
+            padding-top: 191px;
+            padding-top: 267px;
+        }
+    }
+
+    // //todo Header menu
+    .header-menu {
+        &.active {
+            top: 144px;
+        }
+    }
+    .header-above {
+        height: 36px;
+        &__menu {
+            z-index: 50;
+            transition: all 1s 0.2s;
+            flex-wrap: wrap;
+            position: absolute;
+            width: 100%;
+            top: -196px;
+            height: 82px;
+            left: 0;
+            &.active {
+                top: 96px;
+            }
+        }
+        &__list {
+            background-color: $green;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-areas:
+                "a c"
+                "b b";
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        &__item {
+            height: 40px;
+            border-bottom: 2px solid #fff;
+            font-size: 20px;
+            line-height: 40px;
+            & a {
+                padding: 0 15px;
+            }
+            &:first-child {
+                grid-area: a;
+                justify-self: flex-start;
+                .header-above__link {
+                    width: fit-content;
+                }
+            }
+            &:nth-child(2) {
+                width: 100%;
+                grid-area: b;
+                justify-content: space-between;
+                justify-self: center;
+            }
+            &:nth-child(3) {
+                grid-area: c;
+                justify-self: flex-end;
+            }
+        }
+    }
+
     //todo Best sellers
     .best-sellers {
         &::before {
@@ -1960,7 +2031,6 @@ $green: #0b4d3c;
         }
     }
 }
-
 @media only screen and (min-device-width: 320px) and (max-device-width: 450px) {
     //todo Period-products
     .period-products {
@@ -1981,7 +2051,9 @@ $green: #0b4d3c;
     //todo For planet
     .for-planet {
         &__item {
-            width: 100%;
+            width: 80%;
+            margin: 0 auto;
+            padding: 0 5%;
         }
     }
     //todo Fresh blood
@@ -2115,6 +2187,29 @@ $green: #0b4d3c;
         }
     }
 }
+@media only screen and (min-device-width: 320px) and (max-device-width: 400px) {
+    //todo Main
+    .main {
+        &.active {
+            padding-top: 347px;
+        }
+    }
+    // //todo Header menu
+    .header-menu {
+        &.active {
+            top: 224px;
+        }
+    }
+    .header-above {
+        &__item {
+            height: 80px;
+            &:nth-child(3) {
+                justify-self: center;
+            }
+        }
+    }
+}
+
 //! hover
 @media screen and (min-device-width: 768px) {
     .header-above {
