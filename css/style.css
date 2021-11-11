@@ -419,6 +419,8 @@ span {
 
 .wrapper {
   background: #e5e5e5;
+  min-width: 350px;
+  overflow: hidden;
 }
 
 .header-above {
@@ -717,8 +719,6 @@ span {
   -ms-grid-columns: 30% 1fr 1fr 20%;
       grid-template-columns: 30% 1fr 1fr 20%;
       grid-template-areas: "a a a a" "b c c d";
-  font-size: 16px;
-  line-height: 22px;
 }
 
 .best-sellers__illustration {
@@ -1849,6 +1849,10 @@ span {
   color: #ffffff;
 }
 
+.alert {
+  display: none;
+}
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 1200px) {
   .main {
     padding-top: 96px;
@@ -2652,6 +2656,15 @@ span {
             align-items: center;
     gap: 20px;
   }
+  .footer__form {
+    padding-left: 10px;
+  }
+  .footer__form-box {
+    width: 70%;
+  }
+  .footer span {
+    width: 70%;
+  }
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 450px) {
@@ -2792,6 +2805,21 @@ span {
   .header-above__item:nth-child(3) {
     -ms-grid-column-align: center;
         justify-self: center;
+  }
+  .footer__form {
+    padding-left: 10px;
+  }
+  .footer__form-box {
+    width: 70%;
+  }
+  .footer span {
+    width: 70%;
+  }
+  .footer label {
+    font-size: 35px;
+  }
+  .footer input {
+    font-size: 25px;
   }
 }
 

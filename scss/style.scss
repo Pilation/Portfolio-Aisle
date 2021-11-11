@@ -85,6 +85,8 @@ $green: #0b4d3c;
 
 .wrapper {
     background: #e5e5e5;
+    min-width: 350px;
+    overflow: hidden;
 }
 
 //todo Header-above
@@ -333,8 +335,6 @@ $green: #0b4d3c;
         grid-template-areas:
             "a a a a"
             "b c c d";
-        font-size: 16px;
-        line-height: 22px;
     }
 
     &__illustration {
@@ -1250,6 +1250,10 @@ $green: #0b4d3c;
     color: #ffffff;
 }
 
+.alert {
+    display: none;
+}
+
 //! media
 @media only screen and (min-device-width: 320px) and (max-device-width: 1200px) {
     //todo Main
@@ -1926,7 +1930,6 @@ $green: #0b4d3c;
             padding-top: 267px;
         }
     }
-
     // //todo Header menu
     .header-menu {
         &.active {
@@ -1986,7 +1989,6 @@ $green: #0b4d3c;
             }
         }
     }
-
     //todo Best sellers
     .best-sellers {
         &::before {
@@ -2028,6 +2030,17 @@ $green: #0b4d3c;
             flex-direction: column;
             align-items: center;
             gap: 20px;
+        }
+    }
+    .footer {
+        &__form {
+            padding-left: 10px;
+        }
+        &__form-box {
+            width: 70%;
+        }
+        & span {
+            width: 70%;
         }
     }
 }
@@ -2206,6 +2219,24 @@ $green: #0b4d3c;
             &:nth-child(3) {
                 justify-self: center;
             }
+        }
+    }
+    //todo Footer
+    .footer {
+        &__form {
+            padding-left: 10px;
+        }
+        &__form-box {
+            width: 70%;
+        }
+        & span {
+            width: 70%;
+        }
+        & label {
+            font-size: 35px;
+        }
+        & input {
+            font-size: 25px;
         }
     }
 }
