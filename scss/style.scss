@@ -2001,9 +2001,11 @@ $green: #0b4d3c;
                 top: 40px;
                 background-color: #fff;
             }
-            &::after {
-                height: 5px;
-                top: 80px;
+            &:first-child {
+                &::after {
+                    height: 5px;
+                    top: 80px;
+                }
             }
         }
     }
@@ -2247,9 +2249,11 @@ $green: #0b4d3c;
                 top: 80px;
                 background-color: #fff;
             }
-            &::after {
-                height: 5px;
-                top: 160px;
+            &:first-child {
+                &::after {
+                    height: 5px;
+                    top: 160px;
+                }
             }
         }
     }

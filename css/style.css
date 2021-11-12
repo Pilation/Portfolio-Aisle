@@ -2663,7 +2663,7 @@ span {
     top: 40px;
     background-color: #fff;
   }
-  .header-above__item::after {
+  .header-above__item:first-child::after {
     height: 5px;
     top: 80px;
   }
@@ -2871,7 +2871,7 @@ span {
     top: 80px;
     background-color: #fff;
   }
-  .header-above__item::after {
+  .header-above__item:first-child::after {
     height: 5px;
     top: 160px;
   }
