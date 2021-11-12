@@ -3185,24 +3185,18 @@ span {
     opacity: 0.85;
   }
   .fresh-blood__card:hover {
-    -webkit-transform: scale(1.05);
-            transform: scale(1.05);
     opacity: 1;
   }
   .quiz {
     opacity: 0.85;
   }
   .quiz:hover {
-    -webkit-transform: scale(1.05);
-            transform: scale(1.05);
     opacity: 1;
   }
   .fresh-blood__picture {
     opacity: 0.85;
   }
   .fresh-blood__picture:hover {
-    -webkit-transform: scale(1.05);
-            transform: scale(1.05);
     opacity: 1;
   }
 }
