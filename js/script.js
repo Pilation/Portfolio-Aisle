@@ -1,7 +1,7 @@
 
 $('.best-sellers__list,.featured-pages__list').slick({
     arrows: false,
-    dots: false,
+    dots: true,
     draggable: true,
     respondTo: 'window',
     adaptiveHeight: false,
@@ -63,23 +63,53 @@ $(document).ready(function () {
         $('.header__burger,.header-menu,.header__buttons,.header-above__menu,.main').toggleClass('active');
         $('body').toggleClass('lock');
     });
-});
-
-$(document).ready(function () {
     $('.period-products__green').click(function (event) {
         $('.period-products__green img').toggleClass('fullscreen');
     });
-});
-$(document).ready(function () {
     $('.fresh-blood__card').click(function (event) {
         $('.fresh-blood__card').toggleClass('fullscreen');
     });
-});
-$(document).ready(function () {
     $('.fresh-blood__picture').click(function (event) {
         $('.fresh-blood__picture').toggleClass('fullscreen');
     });
+    $('.quiz').click(function (event) {
+        $('.quiz').toggleClass('fullscreen');
+    });
 });
+
+
+
+
+
+
+
+// $(document).ready(function () {
+//     $('.header__burger').click(function (event) {
+//         $('.header__burger,.header-menu,.header__buttons,.header-above__menu,.main').toggleClass('active');
+//         $('body').toggleClass('lock');
+//     });
+// });
+
+// $(document).ready(function () {
+//     $('.period-products__green').click(function (event) {
+//         $('.period-products__green img').toggleClass('fullscreen');
+//     });
+// });
+// $(document).ready(function () {
+//     $('.fresh-blood__card').click(function (event) {
+//         $('.fresh-blood__card').toggleClass('fullscreen');
+//     });
+// });
+// $(document).ready(function () {
+//     $('.fresh-blood__picture').click(function (event) {
+//         $('.fresh-blood__picture').toggleClass('fullscreen');
+//     });
+// });
+// $(document).ready(function () {
+//     $('.quiz').click(function (event) {
+//         $('.quiz').toggleClass('fullscreen');
+//     });
+// });
 
 var btn = $('.go-top-button');
 

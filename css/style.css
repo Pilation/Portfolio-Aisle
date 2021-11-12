@@ -277,8 +277,47 @@ a {
 /* Стрелка вправо */
 /* Стрелка не активная */
 /* Точки (булиты) */
+.slick-dots {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 15px;
+  width: 100%;
+}
+
+.slick-dots li {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #000;
+  opacity: 0.4;
+  z-index: 0;
+  background-color: #943434;
+}
+
+.featured-pages__list .slick-dots li {
+  background-color: #fcb538;
+  opacity: 0.6;
+}
+
 /* Активная точка */
+.slick-dots li.slick-active {
+  opacity: 1;
+}
+
 /* Элемент точки */
+.slick-dots li button {
+  font-size: 0;
+}
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 850px) {
   .slick-slide {
     opacity: 1;
@@ -3052,6 +3091,38 @@ span {
   .footer__link:hover::after {
     opacity: 0.3;
   }
+  .period-products__green img {
+    opacity: 0.85;
+  }
+  .period-products__green img:hover {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+    opacity: 1;
+  }
+  .fresh-blood__card {
+    opacity: 0.85;
+  }
+  .fresh-blood__card:hover {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+    opacity: 1;
+  }
+  .quiz {
+    opacity: 0.85;
+  }
+  .quiz:hover {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+    opacity: 1;
+  }
+  .fresh-blood__picture {
+    opacity: 0.85;
+  }
+  .fresh-blood__picture:hover {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+    opacity: 1;
+  }
 }
 
 .period-products__green img {
@@ -3086,6 +3157,27 @@ span {
 .fresh-blood__card.fullscreen .fresh-blood__discount {
   -webkit-animation: none;
           animation: none;
+}
+
+.quiz {
+  cursor: pointer;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.quiz.fullscreen {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  z-index: 50;
+}
+
+.quiz.fullscreen .quiz_blue-spot {
+  -webkit-animation: none;
+          animation: none;
+}
+
+.quiz.fullscreen .quiz__illustration img {
+  border-radius: 10px;
 }
 
 .fresh-blood__picture {

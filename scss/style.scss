@@ -2472,6 +2472,38 @@ $green: #0b4d3c;
             }
         }
     }
+    .period-products {
+        &__green {
+            & img {
+                opacity: 0.85;
+                &:hover {
+                    transform: scale(1.05);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    .fresh-blood__card {
+        opacity: 0.85;
+        &:hover {
+            transform: scale(1.05);
+            opacity: 1;
+        }
+    }
+    .quiz {
+        opacity: 0.85;
+        &:hover {
+            transform: scale(1.05);
+            opacity: 1;
+        }
+    }
+    .fresh-blood__picture {
+        opacity: 0.85;
+        &:hover {
+            transform: scale(1.05);
+            opacity: 1;
+        }
+    }
 }
 
 //todo Fullscreen
@@ -2499,6 +2531,22 @@ $green: #0b4d3c;
         }
         .fresh-blood__discount {
             animation: none;
+        }
+    }
+}
+.quiz {
+    cursor: pointer;
+    transition: all 1s;
+    &.fullscreen {
+        transform: scale(1.2);
+        z-index: 50;
+        .quiz_blue-spot {
+            animation: none;
+        }
+        .quiz__illustration {
+            & img {
+                border-radius: 10px;
+            }
         }
     }
 }

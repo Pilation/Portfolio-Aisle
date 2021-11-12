@@ -52,14 +52,33 @@
 }
 /* Точки (булиты) */
 .slick-dots {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
 }
 .slick-dots li {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #000;
+    opacity: 0.4;
+    z-index: 0;
+    background-color: #943434;
+}
+.featured-pages__list .slick-dots li {
+    background-color: #fcb538;
+    opacity: 0.6;
 }
 /* Активная точка */
 .slick-dots li.slick-active {
+    opacity: 1;
 }
 /* Элемент точки */
 .slick-dots li button {
+    font-size: 0;
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 850px) {
