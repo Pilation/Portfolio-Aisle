@@ -80,7 +80,10 @@ $green: #0b4d3c;
     font-weight: bold;
     font-size: 22px;
     color: #fff;
-    opacity: 0.5;
+    opacity: 0;
+    &.show {
+        opacity: 0.7;
+    }
 }
 
 .wrapper {
