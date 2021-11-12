@@ -2617,8 +2617,8 @@ span {
             justify-content: space-between;
   }
   .header-above__item {
+    position: relative;
     height: 40px;
-    border-bottom: 2px solid #fff;
     font-size: 20px;
     line-height: 40px;
   }
@@ -2653,6 +2653,19 @@ span {
     -ms-grid-column: 2;
     grid-area: c;
     justify-self: flex-end;
+  }
+  .header-above__item::before, .header-above__item::after {
+    content: "";
+    position: absolute;
+    width: 500vw;
+    height: 2px;
+    left: 0;
+    top: 40px;
+    background-color: #fff;
+  }
+  .header-above__item::after {
+    height: 5px;
+    top: 80px;
   }
   .best-sellers::before {
     position: absolute;
@@ -2848,6 +2861,19 @@ span {
   .header-above__item:nth-child(3) {
     -ms-grid-column-align: center;
         justify-self: center;
+  }
+  .header-above__item::before, .header-above__item::after {
+    content: "";
+    position: absolute;
+    width: 500vw;
+    height: 2px;
+    left: 0;
+    top: 80px;
+    background-color: #fff;
+  }
+  .header-above__item::after {
+    height: 5px;
+    top: 160px;
   }
   .footer__form {
     padding-left: 10px;

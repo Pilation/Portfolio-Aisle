@@ -1966,8 +1966,9 @@ $green: #0b4d3c;
         }
 
         &__item {
+            position: relative;
             height: 40px;
-            border-bottom: 2px solid #fff;
+            // border-bottom: 2px solid #fff;
             font-size: 20px;
             line-height: 40px;
             & a {
@@ -1989,6 +1990,20 @@ $green: #0b4d3c;
             &:nth-child(3) {
                 grid-area: c;
                 justify-self: flex-end;
+            }
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                width: 500vw;
+                height: 2px;
+                left: 0;
+                top: 40px;
+                background-color: #fff;
+            }
+            &::after {
+                height: 5px;
+                top: 80px;
             }
         }
     }
@@ -2221,6 +2236,20 @@ $green: #0b4d3c;
             height: 80px;
             &:nth-child(3) {
                 justify-self: center;
+            }
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                width: 500vw;
+                height: 2px;
+                left: 0;
+                top: 80px;
+                background-color: #fff;
+            }
+            &::after {
+                height: 5px;
+                top: 160px;
             }
         }
     }
